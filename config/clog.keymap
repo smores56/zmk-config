@@ -1,0 +1,155 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define MAIN 0
+#define SYM_LMOD 1
+#define NUM_RMOD 2
+#define NAV 3
+#define FN 4
+
+&mt {
+    flavor = "tap-preferred";
+    tapping_term_ms = <180>;
+};
+
+/ {
+    behaviors {
+        comma_pipe: comma_pipe {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_PIPE";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp PIPE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dot_and: dot_and {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_AND";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp AMPS>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        fslash_star: fslash_star {
+            compatible = "zmk,behavior-mod-morph";
+            label = "FORWARDSLASH_STAR";
+            #binding-cells = <0>;
+            bindings = <&kp FSLH>, <&kp STAR>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        dqt_qmark: dqt_qmark {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOUBLEQUOTE_QUESTION";
+            #binding-cells = <0>;
+            bindings = <&kp DQT>, <&kp QMARK>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        sqt_exclam: sqt_exclam {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SINGLEQUOTE_EXCLAM";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_KEY_QUICK_RELEASE";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <1000>;
+            quick-release;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_z {
+            timeout-ms = <35>;
+            key-positions = <1 2>;
+            bindings = <&kp Z>;
+            layers = <0>;
+        };
+
+        combo_j {
+            timeout-ms = <35>;
+            key-positions = <2 3>;
+            bindings = <&kp J>;
+            layers = <0>;
+        };
+
+        combo_esc {
+            timeout-ms = <35>;
+            key-positions = <21 22>;
+            bindings = <&kp ESC>;
+            layers = <0>;
+        };
+
+        combo_tab {
+            timeout-ms = <35>;
+            key-positions = <22 23>;
+            bindings = <&kp TAB>;
+            layers = <0>;
+        };
+
+        combo_enter {
+            timeout-ms = <35>;
+            key-positions = <21 23>;
+            bindings = <&kp ENTER>;
+            layers = <0>;
+        };
+    };
+
+    keymap {
+        compatible = "zmk,keymap";
+
+        MAIN_layer {
+            bindings = <
+                &kp Q &kp F &kp M &kp P        &kp V            &kp SEMI    &dot_and &fslash_star &dqt_qmark &sqt_exclam
+                &kp R &kp S &kp N &kp D        &kp W            &comma_pipe &kp A    &kp E        &kp I      &kp H
+                &kp X &kp G &kp L &kp C        &kp B            &kp MINUS   &kp U    &kp O        &kp Y      &kp K
+                                  &sl SYM_LMOD &lt NAV SPC      &kp T       &sl NUM_RMOD
+            >;
+        };
+
+        SYM_LMOD_layer {
+            bindings = <
+                &kp LA(LEFT)  &kp LS(LC(TAB)) &kp LC(TAB) &kp CAPS   &none          &kp TILDE &kp LBRC &kp RBRC &kp HASH &none
+                &kp LA(RIGHT) &sk LALT        &sk LCTRL   &skq LSHFT &kp PSCRN      &kp LT    &kp LPAR &kp RPAR &kp GT   &kp BSLH
+                &none         &kp LC(W)       &kp LC(Q)   &sk LGUI   &none          &kp GRAVE &kp LBKT &kp RBKT &kp AT   &kp PRCNT
+                                                          &none      &none          &kp BSPC &sl FN
+            >;
+        };
+
+        NUM_RMOD_layer {
+            bindings = <
+               &none     &kp N7 &kp N8 &kp N9  &kp DLLR       &none &kp CAPS   &none        &none     &none
+               &kp CARET &kp N1 &kp N2 &kp N3  &kp EQUAL      &none &skq RSHFT &sk RCTRL    &sk RALT  &none
+               &none     &kp N4 &kp N5 &kp N6  &kp PLUS       &none &sk RGUI   &sk LS(RGUI) &none     &none
+                                       &kp DOT &kp N0         &none &none
+            >;
+        };
+
+        NAV_layer {
+            bindings = <
+                &kp C_PREV &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_MUTE      &none     &kp LG(D)     &kp LS(LG(D)) &kp LG(Q)  &sk LCTRL
+                &kp LEFT   &kp DOWN     &kp UP       &kp RIGHT  &kp C_PP        &sk RCTRL &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT)
+                &kp HOME   &kp PG_DN    &kp PG_UP    &kp END    &kp C_STOP      &none     &kp LG(ENTER) &kp LG(O)     &kp LG(N)  &sk LALT
+                                                     &none      &none           &kp DEL   &sk RALT
+            >;
+        };
+
+        FN_layer {
+            bindings = <
+                &none &kp F7 &kp F8 &kp F9 &kp F10      &none &kp C_BRI_DN &kp C_BRI_UP &none        &none
+                &none &kp F1 &kp F2 &kp F3 &kp F11      &none &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3
+                &none &kp F4 &kp F5 &kp F6 &kp F12      &none &bt BT_CLR   &none        &none        &none
+                                    &none  &none        &none &none
+            >;
+        };
+    };
+};
