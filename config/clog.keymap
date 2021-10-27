@@ -91,14 +91,14 @@
 
         combo_tab {
             timeout-ms = <35>;
-            key-positions = <22 23>;
+            key-positions = <21 23>;
             bindings = <&kp TAB>;
             layers = <0>;
         };
 
         combo_enter {
             timeout-ms = <35>;
-            key-positions = <21 23>;
+            key-positions = <22 23>;
             bindings = <&kp ENTER>;
             layers = <0>;
         };
