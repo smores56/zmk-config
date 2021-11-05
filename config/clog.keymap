@@ -68,36 +68,36 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_z {
-            timeout-ms = <35>;
-            key-positions = <0 1>;
-            bindings = <&kp Z>;
-            layers = <0>;
-        };
-
         combo_j {
-            timeout-ms = <35>;
-            key-positions = <1 2>;
+            timeout-ms = <30>;
+            key-positions = <0 1>;
             bindings = <&kp J>;
             layers = <0>;
         };
 
+        combo_q {
+            timeout-ms = <30>;
+            key-positions = <1 2>;
+            bindings = <&kp Q>;
+            layers = <0>;
+        };
+
         combo_esc {
-            timeout-ms = <35>;
+            timeout-ms = <30>;
             key-positions = <21 22>;
             bindings = <&kp ESC>;
             layers = <0>;
         };
 
         combo_tab {
-            timeout-ms = <35>;
+            timeout-ms = <30>;
             key-positions = <21 23>;
             bindings = <&kp TAB>;
             layers = <0>;
         };
 
         combo_enter {
-            timeout-ms = <35>;
+            timeout-ms = <30>;
             key-positions = <22 23>;
             bindings = <&kp ENTER>;
             layers = <0>;
@@ -109,10 +109,10 @@
 
         MAIN_layer {
             bindings = <
-                      &kp F &kp M &kp P        &kp V            &kp SEMI    &dot_and &fslash_star &dqt_qmark
-          &kp Q &kp R &kp S &kp N &kp D        &kp W            &comma_pipe &kp A    &kp E        &kp I      &kp H &sqt_exclam
-                &kp X &kp G &kp L &kp C        &kp B            &kp MINUS   &kp U    &kp O        &kp Y      &kp K
-                                  &sl SYM_LMOD &lt NAV SPC      &kp T       &sl NUM_RMOD
+                      &kp G &kp H &kp P        &kp V            &kp SEMI    &dot_and &fslash_star &dqt_qmark
+          &kp Z &kp R &kp S &kp N &kp T        &kp B            &comma_pipe &kp A    &kp E        &kp C      &kp I &sqt_exclam
+                &kp X &kp F &kp M &kp D        &kp K            &kp MINUS   &kp U    &kp O        &kp W      &kp Y
+                                  &sl SYM_LMOD &lt NAV SPC      &kp L       &sl NUM_RMOD
             >;
         };
 
