@@ -27,7 +27,6 @@
 	kscan0: kscan {
 		compatible = "zmk,kscan-gpio-direct";
 		label = "KSCAN";
-		debounce-release-ms = <7>;
 
 		input-gpios
 		= <&pro_micro 18 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
