@@ -47,14 +47,6 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        sqt_exclam: sqt_exclam {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SINGLEQUOTE_EXCLAM";
-            #binding-cells = <0>;
-            bindings = <&kp SQT>, <&kp EXCL>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
         skq: sticky_key_quick_release {
             compatible = "zmk,behavior-sticky-key";
             label = "STICKY_KEY_QUICK_RELEASE";
@@ -103,7 +95,7 @@
         MAIN_layer {
             bindings = <
                       &kp F &kp M &kp P        &kp V            &kp SEMI    &dot_and &fslash_star &dqt_qmark
-          &kp Z &kp R &kp S &kp N &kp T        &kp B            &comma_pipe &kp A    &kp E        &kp C      &kp I &sqt_exclam
+          &kp Z &kp R &kp S &kp N &kp T        &kp B            &comma_pipe &kp A    &kp E        &kp C      &kp I &kp SQT
                 &kp X &kp G &kp H &kp D        &kp K            &kp MINUS   &kp U    &kp O        &kp W      &kp Y
                                   &sl SYM_LMOD &lt NAV SPC      &lt FN L    &sl NUM_RMOD
             >;
@@ -111,8 +103,8 @@
 
         SYM_LMOD_layer {
             bindings = <
-                              &kp LS(LC(TAB)) &kp LC(TAB) &kp CAPS   &none          &kp TILDE &kp LBRC  &kp RBRC &kp HASH
-   &kp LA(LEFT) &kp LA(RIGHT) &sk LALT        &sk LCTRL   &skq LSHFT &kp PSCRN      &kp LT    &kp LPAR  &kp RPAR &kp GT   &kp BSLH  &none
+                              &kp LS(LC(TAB)) &kp LC(TAB) &caps_word &none          &kp TILDE &kp LBRC  &kp RBRC &kp HASH
+   &kp LA(LEFT) &kp LA(RIGHT) &sk LALT        &sk LCTRL   &skq LSHFT &kp PSCRN      &kp LT    &kp LPAR  &kp RPAR &kp GT   &kp BSLH  &kp EXCL
                 &none         &kp LC(W)       &kp LC(Q)   &sk LGUI   &none          &kp GRAVE &kp LBKT  &kp RBKT &kp AT   &kp PRCNT
                                                           &none      &none          &kp BSPC  &kp ENTER
             >;
@@ -120,7 +112,7 @@
 
         NUM_RMOD_layer {
             bindings = <
-                         &kp N7 &kp N8 &kp N9  &kp DLLR       &none &kp CAPS   &none        &none
+                         &kp N7 &kp N8 &kp N9  &kp DLLR       &none &caps_word &kp CAPS     &none
          &none &kp CARET &kp N1 &kp N2 &kp N3  &kp EQUAL      &none &skq RSHFT &sk RCTRL    &sk RALT  &none &none
                &none     &kp N4 &kp N5 &kp N6  &kp PLUS       &none &sk RGUI   &sk LS(RGUI) &kp LC(C) &none
                                        &kp DOT &kp N0         &none &none
