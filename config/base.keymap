@@ -65,6 +65,24 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            timeout-ms = <25>;
+            key-positions = <0 1>;
+            bindings = <&kp ESC>;
+            layers = <0>;
+        };
+
+        combo_tab {
+            timeout-ms = <25>;
+            key-positions = <1 2>;
+            bindings = <&kp TAB>;
+            layers = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -79,7 +97,7 @@
 
         SYM_LMOD_layer {
             bindings = <
-                                       &kp LS(LC(TAB)) &kp LC(TAB) &kp ESC    &none          &kp COLON &kp LBRC  &kp RBRC &kp CARET
+                                       &kp LS(LC(TAB)) &kp LC(TAB) &kp CAPS   &none          &kp COLON &kp LBRC  &kp RBRC &kp CARET
             &kp LA(LEFT) &kp LA(RIGHT) &sk LALT        &sk LCTRL   &skq LSHFT &kp PSCRN      &kp LT    &kp LPAR  &kp RPAR &kp GT    &kp EXCL &kp AMPS
                          &none         &kp LC(W)       &kp LC(Q)   &sk LGUI   &none          &kp GRAVE &kp LBKT  &kp RBKT &kp HASH  &kp Q
                                                                    &none      &none          &kp BSPC  &kp ENTER
@@ -88,7 +106,7 @@
 
         NUM_RMOD_layer {
             bindings = <
-                               &kp N7 &kp N8 &kp N9  &kp STAR       &none &kp TAB    &kp CAPS     &none
+                               &kp N7 &kp N8 &kp N9  &kp STAR       &none &kp CAPS   &none        &none
             &kp PIPE &kp QMARK &kp N1 &kp N2 &kp N3  &kp EQUAL      &none &skq RSHFT &sk RCTRL    &sk RALT  &none &none
                      &kp J     &kp N4 &kp N5 &kp N6  &kp PLUS       &none &sk RGUI   &sk LS(RGUI) &kp LC(C) &none
                                              &kp DOT &kp N0         &none &none
