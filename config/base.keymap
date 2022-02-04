@@ -23,19 +23,27 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        dot_bslh: dot_bslh {
+        dot_amps: dot_amps {
             compatible = "zmk,behavior-mod-morph";
-            label = "DOT_BSLH";
+            label = "DOT_AMPS";
             #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp BSLH>;
+            bindings = <&kp DOT>, <&kp AMPS>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        fslh_prcnt: fslh_prcnt {
+        fslh_hash: fslh_hash {
             compatible = "zmk,behavior-mod-morph";
-            label = "FSLH_PRCNT";
+            label = "FSLH_HASH";
             #binding-cells = <0>;
-            bindings = <&kp FSLH>, <&kp PRCNT>;
+            bindings = <&kp FSLH>, <&kp HASH>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        sqt_prcnt: sqt_prcnt {
+            compatible = "zmk,behavior-mod-morph";
+            label = "SQT_PRCNT";
+            #binding-cells = <0>;
+            bindings = <&kp SQT>, <&kp PRCNT>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -44,14 +52,6 @@
             label = "COMMA_AT";
             #binding-cells = <0>;
             bindings = <&kp COMMA>, <&kp AT>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        sqt_dllr: sqt_dllr {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SQT_DLLR";
-            #binding-cells = <0>;
-            bindings = <&kp SQT>, <&kp DLLR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -81,6 +81,13 @@
             bindings = <&kp TAB>;
             layers = <0>;
         };
+
+        combo_dllr {
+            timeout-ms = <25>;
+            key-positions = <5 6>;
+            bindings = <&kp DLLR>;
+            layers = <0>;
+        };
     };
 
     keymap {
@@ -88,9 +95,9 @@
 
         MAIN_layer {
             bindings = <
-                        &kp F &kp M &kp P        &kp V            &semi_tilde &dot_bslh    &fslh_prcnt &caps_word
-            &kp Z &kp R &kp S &kp N &kp T        &kp B            &comma_at   &kp A        &kp E       &kp C      &kp I &sqt_dllr
-                  &kp X &kp G &kp H &kp D        &kp K            &kp MINUS   &kp U        &kp O       &kp W      &kp Y
+                        &kp F &kp M &kp P        &kp V            &semi_tilde &dot_amps    &fslh_hash &caps_word
+            &kp Z &kp R &kp S &kp N &kp T        &kp B            &comma_at   &kp A        &kp E      &kp C      &kp I &sqt_prcnt
+                  &kp X &kp G &kp H &kp D        &kp K            &kp MINUS   &kp U        &kp O      &kp W      &kp Y
                                     &sl SYM_LMOD &lt NAV SPC      &lt FN L    &sl NUM_RMOD
             >;
         };
@@ -98,8 +105,8 @@
         SYM_LMOD_layer {
             bindings = <
                                        &kp LS(LC(TAB)) &kp LC(TAB) &kp CAPS   &none          &kp COLON &kp LBRC  &kp RBRC &kp CARET
-            &kp LA(LEFT) &kp LA(RIGHT) &sk LALT        &sk LCTRL   &skq LSHFT &kp PSCRN      &kp LT    &kp LPAR  &kp RPAR &kp GT    &kp EXCL &kp AMPS
-                         &none         &kp LC(W)       &kp LC(Q)   &sk LGUI   &none          &kp GRAVE &kp LBKT  &kp RBKT &kp HASH  &kp Q
+            &kp LA(LEFT) &kp LA(RIGHT) &sk LALT        &sk LCTRL   &skq LSHFT &kp PSCRN      &kp LT    &kp LPAR  &kp RPAR &kp GT    &kp EXCL &kp DQT
+                         &none         &kp LC(W)       &kp LC(Q)   &sk LGUI   &none          &kp GRAVE &kp LBKT  &kp RBKT &kp BSLH  &kp Q
                                                                    &none      &none          &kp BSPC  &kp ENTER
             >;
         };
