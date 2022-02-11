@@ -23,27 +23,11 @@
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
-        dot_amps: dot_amps {
+        dot_dllr: dot_dllr {
             compatible = "zmk,behavior-mod-morph";
-            label = "DOT_AMPS";
+            label = "DOT_DLLR";
             #binding-cells = <0>;
-            bindings = <&kp DOT>, <&kp AMPS>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        fslh_hash: fslh_hash {
-            compatible = "zmk,behavior-mod-morph";
-            label = "FSLH_HASH";
-            #binding-cells = <0>;
-            bindings = <&kp FSLH>, <&kp HASH>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        sqt_prcnt: sqt_prcnt {
-            compatible = "zmk,behavior-mod-morph";
-            label = "SQT_PRCNT";
-            #binding-cells = <0>;
-            bindings = <&kp SQT>, <&kp PRCNT>;
+            bindings = <&kp DOT>, <&kp DLLR>;
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
 
@@ -69,24 +53,38 @@
         compatible = "zmk,combos";
 
         combo_esc {
-            timeout-ms = <25>;
+            timeout-ms = <30>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
             layers = <0>;
         };
 
         combo_tab {
-            timeout-ms = <25>;
+            timeout-ms = <30>;
             key-positions = <1 2>;
             bindings = <&kp TAB>;
             layers = <0>;
         };
 
-        combo_dllr {
-            timeout-ms = <25>;
-            key-positions = <5 6>;
-            bindings = <&kp DLLR>;
-            layers = <0>;
+        combo_rbrc {
+            timeout-ms = <30>;
+            key-positions = <6 7>;
+            bindings = <&kp RBRC>;
+            layers = <1>;
+        };
+
+        combo_rpar {
+            timeout-ms = <30>;
+            key-positions = <16 17>;
+            bindings = <&kp RPAR>;
+            layers = <1>;
+        };
+
+        combo_rbkt {
+            timeout-ms = <30>;
+            key-positions = <27 28>;
+            bindings = <&kp RBKT>;
+            layers = <1>;
         };
     };
 
@@ -95,18 +93,18 @@
 
         MAIN_layer {
             bindings = <
-                        &kp F &kp M &kp P        &kp V            &semi_tilde &dot_amps    &fslh_hash &caps_word
-            &kp Z &kp R &kp S &kp N &kp T        &kp B            &comma_at   &kp A        &kp E      &kp C      &kp I &sqt_prcnt
-                  &kp X &kp G &kp H &kp D        &kp K            &kp MINUS   &kp U        &kp O      &kp W      &kp Y
+                        &kp F &kp M &kp P        &kp V            &semi_tilde &dot_dllr    &kp FSLH &kp AMPS
+            &kp Z &kp R &kp S &kp N &kp T        &kp B            &comma_at   &kp A        &kp E    &kp C    &kp I &kp SQT
+                  &kp X &kp G &kp H &kp D        &kp K            &kp MINUS   &kp U        &kp O    &kp W    &kp Y
                                     &sl SYM_LMOD &lt NAV SPC      &lt FN L    &sl NUM_RMOD
             >;
         };
 
         SYM_LMOD_layer {
             bindings = <
-                                       &kp LS(LC(TAB)) &kp LC(TAB) &kp CAPS   &none          &kp COLON &kp LBRC  &kp RBRC &kp CARET
-            &kp LA(LEFT) &kp LA(RIGHT) &sk LALT        &sk LCTRL   &skq LSHFT &kp PSCRN      &kp LT    &kp LPAR  &kp RPAR &kp GT    &kp EXCL &kp DQT
-                         &none         &kp LC(W)       &kp LC(Q)   &sk LGUI   &none          &kp GRAVE &kp LBKT  &kp RBKT &kp BSLH  &kp Q
+                                       &kp LS(LC(TAB)) &kp LC(TAB) &kp CAPS   &none          &kp COLON &kp LBRC  &kp QMARK &kp HASH
+            &kp LA(LEFT) &kp LA(RIGHT) &sk LALT        &sk LCTRL   &skq LSHFT &kp PSCRN      &kp LT    &kp LPAR  &kp EXCL  &kp GT   &kp GRAVE &kp DQT
+                         &none         &kp LC(W)       &kp LC(Q)   &sk LGUI   &none          &kp UNDER &kp LBKT  &kp Q     &kp J    &kp PRCNT
                                                                    &none      &none          &kp BSPC  &kp ENTER
             >;
         };
@@ -114,16 +112,16 @@
         NUM_RMOD_layer {
             bindings = <
                                &kp N7 &kp N8 &kp N9  &kp STAR       &none &kp CAPS   &none        &none
-            &kp PIPE &kp QMARK &kp N1 &kp N2 &kp N3  &kp EQUAL      &none &skq RSHFT &sk RCTRL    &sk RALT  &none &none
-                     &kp J     &kp N4 &kp N5 &kp N6  &kp PLUS       &none &sk RGUI   &sk LS(RGUI) &kp LC(C) &none
+            &kp PIPE &kp BSLH  &kp N1 &kp N2 &kp N3  &kp EQUAL      &none &skq RSHFT &sk RCTRL    &sk RALT  &none &none
+                     &kp CARET &kp N4 &kp N5 &kp N6  &kp PLUS       &none &sk RGUI   &sk LS(RGUI) &kp LC(C) &none
                                              &kp DOT &kp N0         &none &none
             >;
         };
 
         NAV_layer {
             bindings = <
-                                &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_MUTE      &sk RALT    &kp LG(D)     &kp LS(LG(D)) &kp LG(Q)
-            &kp C_PREV &kp LEFT &kp DOWN     &kp UP       &kp RIGHT  &kp C_PP        &sk RA(GUI) &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT) &none
+                                &kp C_VOL_DN &kp C_VOL_UP &kp C_NEXT &kp C_MUTE      &sk RA(GUI) &kp LG(D)     &kp LS(LG(D)) &kp LG(Q)
+            &kp C_PREV &kp LEFT &kp DOWN     &kp UP       &kp RIGHT  &kp C_PP        &sk RALT    &kp LG(LEFT)  &kp LG(DOWN)  &kp LG(UP) &kp LG(RIGHT) &none
                        &kp HOME &kp PG_DN    &kp PG_UP    &kp END    &kp C_STOP      &sk RCTRL   &kp LG(ENTER) &kp LG(O)     &kp LG(N)  &sk RA(RCTRL)
                                                           &none      &none           &kp DEL     &sk RSHFT
             >;
