@@ -101,10 +101,10 @@
 
         NAV_layer {
             bindings = <
-                                &kp PG_UP &kp UP   &kp C_VOL_UP &kp END         &kp LG(P) &kp LG(D)     &kp LS(LG(D)) &kp LG(Q)
-            &kp HOME &kp C_PREV &kp LEFT  &kp DOWN &kp RIGHT    &kp C_NEXT      &kp LG(L) &kp RGUI      &kp RCTRL     &kp RALT  &none &none
-                     &kp C_STOP &kp PG_DN &kp C_PP &kp C_VOL_DN &kp C_MUTE      &none     &kp LG(ENTER) &kp LG(O)     &kp LG(N) &none
-                                                   &none        &none           &trans    &kp DEL
+                             &kp PG_DN    &kp PG_UP &kp C_PREV   &kp C_NEXT         &kp LG(P) &kp LG(D)     &kp LS(LG(D)) &kp LG(Q)
+            &kp C_PP &kp END &kp LEFT     &kp UP    &kp RIGHT    &kp LA(LEFT)       &kp LG(L) &kp RGUI      &kp RCTRL     &kp RALT  &none &none
+                     &kp END &kp C_VOL_UP &kp DOWN  &kp C_VOL_DN &kp LA(RIGHT)      &none     &kp LG(ENTER) &kp LG(O)     &kp LG(N) &none
+                                                    &none        &none              &trans    &kp DEL
             >;
         };
 
