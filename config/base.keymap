@@ -83,9 +83,9 @@
 
         MAIN_layer {
             bindings = <
-                              &kp C      &kp M       &kp P      &kp V            &kp SEMI   &dot_excl  &kp FSLH    &kp BSLH
-            &kp X &mt LSHFT R &mt RALT S &mt LCTRL T &mt LGUI H &kp K            &kp COMMA  &mt RGUI N &mt RCTRL E &mt RALT A &mt RSHFT I &kp SQT
-                  &kp W       &kp G      &lt FN D    &lt SYM F  &kp B            &kp MINUS  &lt SYM L  &lt FN U    &kp O      &kp Y
+                              &kp F      &kp M       &kp P      &kp V            &kp SEMI   &dot_excl  &kp FSLH    &kp BSLH
+            &kp W &mt LSHFT R &mt RALT S &mt LCTRL N &mt LGUI T &kp B            &kp COMMA  &mt RGUI A &mt RCTRL E &mt RALT I &mt RSHFT H &kp SQT
+                  &kp X       &kp C      &lt FN L    &lt SYM D  &kp G            &kp MINUS  &lt SYM U  &lt FN O    &kp Y      &kp K
                                                      &kp ENTER  &lt NAV SPC      &skq RSHFT &kp BSPC
             >;
         };
@@ -101,10 +101,10 @@
 
         NAV_layer {
             bindings = <
-                             &kp PG_DN    &kp PG_UP &kp C_PREV   &kp C_NEXT         &kp LG(P) &kp LG(D)     &kp LS(LG(D)) &kp LG(Q)
-            &kp C_PP &kp END &kp LEFT     &kp UP    &kp RIGHT    &kp LA(LEFT)       &kp LG(L) &kp RGUI      &kp RCTRL     &kp RALT  &none &none
-                     &kp END &kp C_VOL_UP &kp DOWN  &kp C_VOL_DN &kp LA(RIGHT)      &none     &kp LG(ENTER) &kp LG(O)     &kp LG(N) &none
-                                                    &none        &none              &trans    &kp DEL
+                                  &kp PG_DN &kp UP       &kp PG_UP    &kp C_PP           &kp LG(P) &kp LG(D)     &kp LS(LG(D)) &kp LG(Q)
+            &kp C_PREV &kp C_NEXT &kp LEFT  &kp DOWN     &kp RIGHT    &kp LA(LEFT)       &kp LG(L) &kp RGUI      &kp RCTRL     &kp RALT  &none &none
+                       &kp HOME   &kp END   &kp C_VOL_DN &kp C_VOL_UP &kp LA(RIGHT)      &none     &kp LG(ENTER) &kp LG(O)     &kp LG(N) &none
+                                                         &none        &none              &trans    &kp DEL
             >;
         };
 
