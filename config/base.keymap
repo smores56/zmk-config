@@ -49,6 +49,20 @@
             layers = <0>;
         };
 
+        combo_next_tab {
+            timeout-ms = <30>;
+            key-positions = <0 3>;
+            bindings = <&kp LC(TAB)>;
+            layers = <0>;
+        };
+
+        combo_prev_tab {
+            timeout-ms = <30>;
+            key-positions = <0 2>;
+            bindings = <&kp LS(LC(TAB))>;
+            layers = <0>;
+        };
+
         combo_grave {
             timeout-ms = <30>;
             key-positions = <6 7>;
@@ -84,8 +98,8 @@
         MAIN_layer {
             bindings = <
                               &kp F      &kp M       &kp P      &kp V            &kp SEMI   &dot_excl  &kp FSLH    &kp BSLH
-            &kp W &mt LSHFT R &mt RALT S &mt LCTRL N &mt LGUI T &kp B            &kp COMMA  &mt RGUI A &mt RCTRL E &mt RALT I &mt RSHFT H &kp SQT
-                  &kp X       &kp C      &lt FN L    &lt SYM D  &kp G            &kp MINUS  &lt SYM U  &lt FN O    &kp Y      &kp K
+            &kp W &mt LSHFT R &mt RALT S &mt LCTRL N &mt LGUI T &kp G            &kp COMMA  &mt RGUI A &mt RCTRL E &mt RALT I &mt RSHFT H &kp SQT
+                  &kp X       &kp C      &lt FN L    &lt SYM D  &kp B            &kp MINUS  &lt SYM U  &lt FN O    &kp Y      &kp K
                                                      &kp ENTER  &lt NAV SPC      &skq RSHFT &kp BSPC
             >;
         };
@@ -101,10 +115,10 @@
 
         NAV_layer {
             bindings = <
-                                  &kp PG_DN &kp UP       &kp PG_UP    &kp C_PP           &kp LG(P) &kp LG(D)     &kp LS(LG(D)) &kp LG(Q)
-            &kp C_PREV &kp C_NEXT &kp LEFT  &kp DOWN     &kp RIGHT    &kp LA(LEFT)       &kp LG(L) &kp RGUI      &kp RCTRL     &kp RALT  &none &none
-                       &kp HOME   &kp END   &kp C_VOL_DN &kp C_VOL_UP &kp LA(RIGHT)      &none     &kp LG(ENTER) &kp LG(O)     &kp LG(N) &none
-                                                         &none        &none              &trans    &kp DEL
+                                  &kp PG_DN &kp UP       &kp PG_UP    &kp C_PP             &kp LG(P) &kp LG(D)     &kp LS(LG(D)) &kp LG(Q)
+            &kp C_PREV &kp C_NEXT &kp LEFT  &kp DOWN     &kp RIGHT    &kp LC(TAB)          &kp LG(L) &kp RGUI      &kp RCTRL     &kp RALT  &none &none
+                       &kp HOME   &kp END   &kp C_VOL_DN &kp C_VOL_UP &kp LS(LC(TAB))      &none     &kp LG(ENTER) &kp LG(O)     &kp LG(N) &none
+                                                         &none        &none                &trans    &kp DEL
             >;
         };
 
