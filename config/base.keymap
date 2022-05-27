@@ -49,17 +49,17 @@
             layers = <0>;
         };
 
-        combo_next_tab {
+        combo_nav_back {
             timeout-ms = <30>;
-            key-positions = <0 3>;
-            bindings = <&kp LC(TAB)>;
+            key-positions = <20 22>;
+            bindings = <&kp LA(LEFT)>;
             layers = <0>;
         };
 
-        combo_prev_tab {
+        combo_nav_forward {
             timeout-ms = <30>;
-            key-positions = <0 2>;
-            bindings = <&kp LS(LC(TAB))>;
+            key-positions = <20 23>;
+            bindings = <&kp LA(RIGHT)>;
             layers = <0>;
         };
 
