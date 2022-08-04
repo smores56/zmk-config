@@ -5,3 +5,5 @@ include:
     shield: clog_right
   - board: nice_nano_v2
     shield: osprette
+  - board: adafruit_kb2040
+    shield: osprette
