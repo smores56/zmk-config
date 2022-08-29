@@ -1,0 +1,9 @@
+file_format: "1"
+id: clog_v2
+name: Clog V2
+type: shield
+url: https://github.com/smores56/clog-v2
+requires: [seeed_xiao]
+features:
+  - keys
+  - encoder
