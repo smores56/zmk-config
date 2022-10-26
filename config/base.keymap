@@ -64,24 +64,24 @@
             layers = <0>;
         };
 
-        combo_q {
-            timeout-ms = <30>;
-            key-positions = <1 2>;
-            bindings = <&kp Q>;
-            layers = <0>;
-        };
-
-        combo_j {
+        combo_backslash {
             timeout-ms = <30>;
             key-positions = <1 3>;
-            bindings = <&kp J>;
+            bindings = <&kp BACKSLASH>;
             layers = <0>;
         };
 
-        combo_z {
+        combo_minus {
+            timeout-ms = <30>;
+            key-positions = <1 2>;
+            bindings = <&kp MINUS>;
+            layers = <0>;
+        };
+
+        combo_semicolon {
             timeout-ms = <30>;
             key-positions = <0 1>;
-            bindings = <&kp Z>;
+            bindings = <&kp SEMI>;
             layers = <0>;
         };
     };
@@ -91,10 +91,10 @@
 
         MAIN_layer {
             bindings = <
-                              &lt FN F   &kp M       &kp P      &kp V            &kp SEMI    &dot_excl  &kp FSLH    &lt FN BSLH
-            &kp W &mt LSHFT R &mt LALT S &mt LCTRL N &mt LGUI T &kp G            &comma_pipe &mt RGUI A &mt RCTRL E &mt RALT I  &mt RSHFT H &kp SQT
-                  &kp X       &kp C      &kp L       &lt SYM D  &kp B            &kp MINUS   &lt SYM U  &kp O       &kp Y       &kp K
-                                                     &kp ENTER  &lt NAV SPC      &skq RSHFT  &kp BSPC
+                              &lt FN W   &kp E       &kp R      &kp T            &kp Y      &kp U      &kp I       &lt FN O
+            &kp Q &mt LSHFT A &mt LALT S &mt LCTRL D &mt LGUI F &kp G            &kp H      &mt RGUI J &mt RCTRL K &mt RALT L &mt RSHFT SQT &kp P
+                  &kp Z       &kp X      &kp C       &lt SYM V  &kp B            &kp N      &lt SYM M  &kp COMMA   &kp DOT    &kp FSLH
+                                                     &kp ENTER  &lt NAV SPC      &skq RSHFT &kp BSPC
             >;
         };
 
