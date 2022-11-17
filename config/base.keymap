@@ -66,9 +66,9 @@
         
         MAIN_layer {
             bindings = <
-                        &lt FN SQT &kp H &kp G       &kp Q            &kp SEMI    &kp DOT     &kp FSLH &lt FN BSLH
-            &kp B &kp C &kp S      &kp N &mt LSHFT T &kp K            &kp COMMA   &mt RSHFT A &kp E    &kp I       &kp M &kp X
-                  &kp P &kp F      &kp L &kp D       &kp V            &kp MINUS   &kp U       &kp O    &kp Y       &kp W
+                        &lt FN SQT &kp H &kp G       &kp V            &kp SEMI    &kp DOT     &kp FSLH &lt FN BSLH
+            &kp W &kp C &kp S      &kp N &mt LSHFT T &kp K            &kp COMMA   &mt RSHFT A &kp E    &kp I       &kp M &kp X
+                  &kp P &kp F      &kp L &kp D       &kp Q            &kp MINUS   &kp U       &kp O    &kp Y       &kp B
                                          &sl SYM     &lt NAV SPC      &mt RSHFT R &sl NUM
             >;
         };
@@ -76,8 +76,8 @@
         SYM_layer {
             bindings = <
                         &kp DQT   &kp GRAVE  &kp TILDE  &none      &kp COLON &kp LBRC  &kp RBRC &kp HASH
-            &none &none &skq LALT &skq LCTRL &skq LSHFT &none      &kp LT    &kp LPAR  &kp RPAR &kp GT   &none &none
-                  &none &kp AMPS  &kp PIPE   &skq LGUI  &none      &kp UNDER &kp LBKT  &kp RBKT &kp AT   &none
+            &none &none &skq LALT &skq LCTRL &skq LSHFT &none      &kp LT    &kp LPAR  &kp RPAR &kp GT   &kp AMPS &none
+                  &none &kp PIPE  &kp QMARK  &skq LGUI  &none      &kp UNDER &kp LBKT  &kp RBKT &kp AT   &none
                                              &none      &none      &kp BSPC  &kp ENTER
             >;
         };
@@ -86,7 +86,7 @@
             bindings = <
                                 &kp N7 &kp N8 &kp N9 &kp STAR       &none &kp DLLR   &kp PRCNT  &kp CARET
             &kp COLON &kp DOT   &kp N1 &kp N2 &kp N3 &kp EQUAL      &none &skq RSHFT &skq RCTRL &skq RALT &none &none
-                      &kp COMMA &kp N4 &kp N5 &kp N6 &kp PLUS       &none &skq RGUI  &kp EXCL   &kp QMARK &none
+                      &kp COMMA &kp N4 &kp N5 &kp N6 &kp PLUS       &none &skq RGUI  &kp EXCL   &none     &none
                                               &kp N0 &kp SPC        &none &none
             >;
         };
