@@ -59,6 +59,27 @@
             bindings = <&kp Z>;
             layers = <0>;
         };
+
+        combo_bspc {
+            timeout-ms = <20>;
+            key-positions = <11 12>;
+            bindings = <&kp BSPC>;
+            layers = <0 1 2 3 4>;
+        };
+
+        combo_delete {
+            timeout-ms = <20>;
+            key-positions = <1 2>;
+            bindings = <&kp DEL>;
+            layers = <0 1 2 3 4>;
+        };
+
+        combo_enter {
+            timeout-ms = <20>;
+            key-positions = <10 11>;
+            bindings = <&kp ENTER>;
+            layers = <0 1 2 3 4>;
+        };
     };
 
     keymap {
@@ -66,28 +87,28 @@
         
         MAIN_layer {
             bindings = <
-                        &lt FN SQT &kp H &kp G   &kp V            &kp SEMI    &kp DOT &kp FSLH &lt FN BSLH
-            &kp W &kp C &kp S      &kp N &kp T   &kp K            &kp COMMA   &kp A   &kp E    &kp I       &kp M &kp X
-                  &kp P &kp F      &kp L &kp D   &kp Q            &kp MINUS   &kp U   &kp O    &kp Y       &kp B
-                                         &sl SYM &lt NAV SPC      &mt RSHFT R &sl NUM
+                        &lt FN F &kp M &kp P   &kp K            &kp SEMI    &kp DOT &kp FSLH &lt FN BSLH
+            &kp Q &kp R &kp S    &kp N &kp T   &kp W            &kp COMMA   &kp A   &kp E    &kp I       &kp C &kp SQT
+                  &kp X &kp G    &kp H &kp D   &kp B            &kp MINUS   &kp U   &kp O    &kp Y       &kp V
+                                       &sl SYM &lt NAV SPC      &mt RSHFT L &sl NUM
             >;
         };
 
         SYM_layer {
             bindings = <
-                        &kp DQT  &kp GRAVE &kp TILDE  &none      &kp COLON &kp LBRC  &kp RBRC &kp HASH
-            &none &none &sk LALT &sk LCTRL &skq LSHFT &none      &kp LT    &kp LPAR  &kp RPAR &kp GT   &kp AMPS &none
-                  &none &kp PIPE &kp QMARK &sk LGUI   &none      &kp UNDER &kp LBKT  &kp RBKT &kp AT   &none
-                                           &none      &none      &kp BSPC  &kp ENTER
+                            &none     &none     &kp TILDE  &none      &kp COLON &kp LBRC  &kp RBRC &kp HASH
+            &none &kp PIPE  &sk LALT  &sk LCTRL &skq LSHFT &none      &kp LT    &kp LPAR  &kp RPAR &kp GT   &kp AMPS  &kp DQT
+                  &kp CARET &kp GRAVE &kp QMARK &sk LGUI   &none      &kp UNDER &kp LBKT  &kp RBKT &kp AT   &kp PRCNT
+                                              &none      &none      &none     &none
             >;
         };
 
         NUM_layer {
             bindings = <
-                                &kp N7 &kp N8 &kp N9 &kp STAR       &none &kp DLLR   &kp PRCNT &kp CARET
+                                &kp N7 &kp N8 &kp N9 &kp STAR       &none &kp DLLR   &none     &none
             &kp COLON &kp DOT   &kp N1 &kp N2 &kp N3 &kp EQUAL      &none &skq RSHFT &sk RCTRL &sk RALT  &none &none
                       &kp COMMA &kp N4 &kp N5 &kp N6 &kp PLUS       &none &sk RGUI   &kp EXCL  &none     &none
-                                              &kp N0 &kp SPC        &none &none
+                                              &kp N0 &trans         &none &none
             >;
         };
 
@@ -96,7 +117,7 @@
                               &kp C_VOL_DN &kp C_VOL_UP &kp C_PREV &kp C_NEXT           &kp F10   &kp F7       &kp F8       &kp F9
             &kp C_PP &kp LEFT &kp DOWN     &kp UP       &kp RIGHT  &kp LC(TAB)          &kp F11   &mt RSHFT F1 &mt RCTRL F2 &mt RALT F3 &kp C_BRI_DN &kp C_BRI_UP
                      &kp HOME &kp PG_DN    &kp PG_UP    &kp END    &kp LS(LC(TAB))      &kp F12   &mt RGUI F4  &kp F5       &kp F6      &kp PSCRN
-                                                        &none      &none                &kp RSHFT &kp DEL
+                                                        &none      &none                &none     &none
             >;
         };
 
