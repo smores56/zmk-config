@@ -14,10 +14,21 @@
 };
 
 &sl {
-    release-after-ms = <500>;
+    release-after-ms = <750>;
 };
 
 / {
+    behaviors {
+        skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_KEY_QUICK_RELEASE";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <750>;
+            quick-release;
+        };
+    };
+
     combos {
         compatible = "zmk,combos";
 
@@ -64,18 +75,18 @@
 
         SYM_layer {
             bindings = <
-                        &kp DQT  &kp GRAVE &kp TILDE &none      &kp COLON &kp LBRC  &kp RBRC &kp HASH
-            &none &none &sk LALT &sk LCTRL &sk LSHFT &none      &kp LT    &kp LPAR  &kp RPAR &kp GT   &kp AMPS &none
-                  &none &kp PIPE &kp QMARK &sk LGUI  &none      &kp UNDER &kp LBKT  &kp RBKT &kp AT   &none
-                                           &none     &none      &kp BSPC  &kp ENTER
+                        &kp DQT  &kp GRAVE &kp TILDE  &none      &kp COLON &kp LBRC  &kp RBRC &kp HASH
+            &none &none &sk LALT &sk LCTRL &skq LSHFT &none      &kp LT    &kp LPAR  &kp RPAR &kp GT   &kp AMPS &none
+                  &none &kp PIPE &kp QMARK &sk LGUI   &none      &kp UNDER &kp LBKT  &kp RBKT &kp AT   &none
+                                           &none      &none      &kp BSPC  &kp ENTER
             >;
         };
 
         NUM_layer {
             bindings = <
-                                &kp N7 &kp N8 &kp N9 &kp STAR       &none &kp DLLR  &kp PRCNT &kp CARET
-            &kp COLON &kp DOT   &kp N1 &kp N2 &kp N3 &kp EQUAL      &none &sk RSHFT &sk RCTRL &sk RALT  &none &none
-                      &kp COMMA &kp N4 &kp N5 &kp N6 &kp PLUS       &none &sk RGUI  &kp EXCL  &none     &none
+                                &kp N7 &kp N8 &kp N9 &kp STAR       &none &kp DLLR   &kp PRCNT &kp CARET
+            &kp COLON &kp DOT   &kp N1 &kp N2 &kp N3 &kp EQUAL      &none &skq RSHFT &sk RCTRL &sk RALT  &none &none
+                      &kp COMMA &kp N4 &kp N5 &kp N6 &kp PLUS       &none &sk RGUI   &kp EXCL  &none     &none
                                               &kp N0 &kp SPC        &none &none
             >;
         };
