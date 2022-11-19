@@ -87,9 +87,9 @@
         
         MAIN_layer {
             bindings = <
-                        &lt FN F &kp M &kp P   &kp K            &kp SEMI    &kp DOT &kp FSLH &lt FN BSLH
-            &kp Q &kp R &kp S    &kp N &kp T   &kp W            &kp COMMA   &kp A   &kp E    &kp I       &kp C &kp SQT
-                  &kp X &kp G    &kp H &kp D   &kp B            &kp MINUS   &kp U   &kp O    &kp Y       &kp V
+                        &lt FN F &kp M &kp P   &kp Q            &kp SEMI    &kp DOT &kp FSLH &lt FN BSLH
+            &kp V &kp C &kp S    &kp N &kp T   &kp W            &kp COMMA   &kp A   &kp E    &kp I       &kp R &kp SQT
+                  &kp X &kp G    &kp H &kp D   &kp B            &kp MINUS   &kp U   &kp O    &kp Y       &kp K
                                        &sl SYM &lt NAV SPC      &mt RSHFT L &sl NUM
             >;
         };
