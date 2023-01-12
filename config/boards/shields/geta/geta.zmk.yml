@@ -1,0 +1,8 @@
+file_format: "1"
+id: geta
+name: Geta
+type: shield
+url: https://github.com/smores56/geta
+requires: [seeed_xiao]
+features:
+  - keys

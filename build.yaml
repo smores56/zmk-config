@@ -7,6 +7,10 @@ include:
     shield: clog_v2_left
   - board: seeeduino_xiao_ble
     shield: clog_v2_right
+  - board: seeeduino_xiao_ble
+    shield: geta_left
+  - board: seeeduino_xiao_ble
+    shield: geta_right
   - board: nice_nano_v2
     shield: osprette
   - board: adafruit_kb2040

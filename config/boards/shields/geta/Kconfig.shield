@@ -1,0 +1,13 @@
+# Copyright (c) 2022 The ZMK Contributors
+# SPDX-License-Identifier: MIT
+
+config SHIELD_GETA
+    bool
+
+config SHIELD_GETA_LEFT
+    def_bool $(shields_list_contains,geta_left)
+    select SHIELD_GETA
+
+config SHIELD_GETA_RIGHT
+    def_bool $(shields_list_contains,geta_right)
+    select SHIELD_GETA
