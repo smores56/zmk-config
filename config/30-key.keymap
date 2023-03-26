@@ -1,0 +1,219 @@
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+#define MAIN 0
+#define SYM 1
+#define NAV 2
+#define FN 3
+
+&mt {
+    flavor = "tap-preferred";
+    tapping_term_ms = <160>;
+};
+
+/ {
+    keymap {
+        compatible = "zmk,keymap";
+
+        MAIN_layer {
+            bindings = <
+                              &lt FN F   &kp M       &kp P      &none            &none       &dot_excl  &kp SQT     &lt FN FSLH
+            &none &mt LSHFT R &mt LALT S &mt LCTRL N &mt LGUI T &kp G            &comma_pipe &mt RGUI A &mt RCTRL E &mt RALT I  &mt RSHFT H &none
+                  &kp W       &kp C      &kp L       &lt SYM D  &kp B            &kp MINUS   &lt SYM U  &kp O       &kp Y       &kp K
+                                                     &kp ENTER  &lt NAV SPC      &skq RSHFT  &kp BSPC
+            >;
+        };
+
+        SYM_layer {
+            bindings = <
+                            &kp N7 &kp N8 &kp N9 &none          &none    &kp LBRC  &kp RBRC &kp BSLH
+            &none &kp DOT   &kp N1 &kp N2 &kp N3 &kp EQUAL      &kp LT   &kp LPAR  &kp RPAR &kp GT   &kp AMPS  &none
+                  &kp COLON &kp N4 &kp N5 &kp N6 &kp PLUS       &kp DLLR &kp LBKT  &kp RBKT &kp AT   &kp PRCNT
+                                          &kp N0 &trans         &trans   &trans
+            >;
+        };
+
+        NAV_layer {
+            bindings = <
+                           &kp C_VOL_DN &kp C_VOL_UP &kp C_PP  &none                &none     &kp F7  &kp F8 &kp F9
+            &none &kp LEFT &kp DOWN     &kp UP       &kp RIGHT &kp LC(TAB)          &kp PSCRN &kp F1  &kp F2 &kp F3 &kp C_BRI_UP &none
+                  &kp HOME &kp PG_DN    &kp PG_UP    &kp END   &kp LS(LC(TAB))      &none     &kp F4  &kp F5 &kp F6 &kp C_BRI_DN
+                                                     &none     &none                &trans    &kp DEL
+            >;
+        };
+
+        FN_layer {
+            bindings = <
+                        &none        &bootloader  &reset       &none           &none  &none &none &none
+            &none &none &bt BT_SEL 2 &bt BT_SEL 1 &bt BT_SEL 0 &bt BT_CLR      &none  &none &none &none &none &none
+                  &none &none        &bt BT_SEL 4 &bt BT_SEL 3 &none           &none  &none &none &none &none
+                                                  &none        &none           &trans &none
+            >;
+        };
+    };
+
+    behaviors {
+        dot_excl: dot_excl {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT_EXCL";
+            #binding-cells = <0>;
+            bindings = <&kp DOT>, <&kp EXCL>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        comma_pipe: comma_pipe {
+            compatible = "zmk,behavior-mod-morph";
+            label = "COMMA_PIPE";
+            #binding-cells = <0>;
+            bindings = <&kp COMMA>, <&kp PIPE>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
+
+        skq: sticky_key_quick_release {
+            compatible = "zmk,behavior-sticky-key";
+            label = "STICKY_KEY_QUICK_RELEASE";
+            #binding-cells = <1>;
+            bindings = <&kp>;
+            release-after-ms = <750>;
+            quick-release;
+        };
+    };
+
+    combos {
+        compatible = "zmk,combos";
+
+        combo_esc {
+            timeout-ms = <20>;
+            key-positions = <21 22>;
+            bindings = <&kp ESC>;
+            layers = <0>;
+        };
+
+        combo_tab {
+            timeout-ms = <20>;
+            key-positions = <22 23>;
+            bindings = <&kp TAB>;
+            layers = <0>;
+        };
+
+        combo_q {
+            timeout-ms = <20>;
+            key-positions = <1 2>;
+            bindings = <&kp Q>;
+            layers = <0>;
+        };
+
+        combo_v {
+            timeout-ms = <20>;
+            key-positions = <2 12>;
+            bindings = <&kp V>;
+            layers = <0>;
+        };
+
+        combo_j {
+            timeout-ms = <20>;
+            key-positions = <1 13>;
+            bindings = <&kp J>;
+            layers = <0>;
+        };
+
+        combo_z {
+            timeout-ms = <20>;
+            key-positions = <0 1>;
+            bindings = <&kp Z>;
+            layers = <0>;
+        };
+
+        combo_x {
+            timeout-ms = <20>;
+            key-positions = <0 2>;
+            bindings = <&kp X>;
+            layers = <0>;
+        };
+
+        combo_grave {
+            timeout-ms = <20>;
+            key-positions = <6 7>;
+            bindings = <&kp GRAVE>;
+            layers = <1>;
+        };
+
+        combo_semi {
+            timeout-ms = <20>;
+            key-positions = <5 6>;
+            bindings = <&kp SEMI>;
+            layers = <0>;
+        };
+
+        combo_colon {
+            timeout-ms = <20>;
+            key-positions = <14 6>;
+            bindings = <&kp COLON>;
+            layers = <0>;
+        };
+
+        combo_star {
+            timeout-ms = <20>;
+            key-positions = <26 27>;
+            bindings = <&kp STAR>;
+            layers = <1>;
+        };
+
+        combo_hash {
+            timeout-ms = <20>;
+            key-positions = <27 28>;
+            bindings = <&kp HASH>;
+            layers = <1>;
+        };
+
+        combo_tilde {
+            timeout-ms = <20>;
+            key-positions = <5 6>;
+            bindings = <&kp TILDE>;
+            layers = <1>;
+        };
+
+        combo_caret {
+            timeout-ms = <20>;
+            key-positions = <6 7>;
+            bindings = <&kp CARET>;
+            layers = <1>;
+        };
+
+        combo_c_prev {
+            timeout-ms = <20>;
+            key-positions = <0 1>;
+            bindings = <&kp C_PREV>;
+            layers = <2>;
+        };
+
+        combo_c_next {
+            timeout-ms = <20>;
+            key-positions = <1 2>;
+            bindings = <&kp C_NEXT>;
+            layers = <2>;
+        };
+
+        combo_f10 {
+            timeout-ms = <20>;
+            key-positions = <5 15>;
+            bindings = <&kp F10>;
+            layers = <2>;
+        };
+
+        combo_f11 {
+            timeout-ms = <20>;
+            key-positions = <6 16>;
+            bindings = <&kp F11>;
+            layers = <2>;
+        };
+
+        combo_f12 {
+            timeout-ms = <20>;
+            key-positions = <7 17>;
+            bindings = <&kp F12>;
+            layers = <2>;
+        };
+    };
+};
