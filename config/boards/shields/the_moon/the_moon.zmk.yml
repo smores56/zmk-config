@@ -1,0 +1,8 @@
+file_format: "1"
+id: the_moon
+name: The Moon
+type: shield
+url: https://github.com/happyRip/Peripheral-arcana
+requires: [seeed_xiao]
+features:
+  - keys
