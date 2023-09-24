@@ -15,7 +15,7 @@ include:
     shield: the_moon
   - board: nice_nano_v2
     shield: osprette
-  - board: adafruit_kb2040
+  - board: boardsource_blok
     shield: osprette
   - board: nice_nano_v2
     shield: settings_reset
