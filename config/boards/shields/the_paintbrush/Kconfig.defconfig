@@ -1,0 +1,6 @@
+if SHIELD_THE_PAINTBRUSH_LEFT || SHIELD_THE_PAINTBRUSH_RIGHT
+
+config ZMK_KEYBOARD_NAME
+	default "The Paintbrush"
+
+endif

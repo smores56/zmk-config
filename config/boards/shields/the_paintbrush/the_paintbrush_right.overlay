@@ -1,0 +1,31 @@
+/*
+ * Copyright (c) 2021 Mike "KemoNine" Crosson
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <dt-bindings/zmk/matrix_transform.h>
+
+/ {
+	chosen {
+		zmk,kscan = &kscan0;
+	};
+
+	kscan0: kscan_0 {
+		compatible = "zmk,kscan-gpio-direct";
+
+		label = "KSCAN";
+
+		input-gpios
+			= <&pro_micro 3 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&pro_micro 2 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&pro_micro 1 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&pro_micro 0 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&pro_micro 15 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&pro_micro 14 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&pro_micro 16 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			, <&pro_micro 10 (GPIO_ACTIVE_LOW | GPIO_PULL_UP)>
+			;
+
+	};
+};
