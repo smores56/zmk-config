@@ -37,10 +37,10 @@
 
         MAIN_layer {
             bindings = <
-                        &lt FN W &kp M &kp G   &kp TAB        &kp SEMI    &dot_excl &kp FSLH &lt FN BSLH
-            &kp X &kp S &kp C    &kp N &kp T   &kp K          &comma_pipe &kp A     &kp E    &kp I       &kp H &kp SQT
-                  &kp V &kp P    &kp L &kp D   &kp B          &kp MINUS   &kp U     &kp O    &kp Y       &kp F
-                                       &mo SYM &lt NAV R      &kp SPC     &mo NUM
+                        &lt FN W &kp M &kp G   &kp TAB          &kp SEMI    &dot_excl &kp FSLH &lt FN BSLH
+            &kp X &kp S &kp C    &kp N &kp T   &kp K            &comma_pipe &kp A     &kp E    &kp I       &kp H &kp SQT
+                  &kp V &kp P    &kp L &kp D   &kp B            &kp MINUS   &kp U     &kp O    &kp Y       &kp F
+                                       &mo SYM &lt NAV SPC      &kp R       &mo NUM
             >;
         };
 
