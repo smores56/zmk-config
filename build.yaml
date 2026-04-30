@@ -1,29 +1,27 @@
 include:
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: clog_left
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: clog_right
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: clog_v2_left
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: clog_v2_right
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: geta_left
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: geta_right
-  # - board: seeeduino_xiao_ble
-  #   shield: the_moon
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: osprette
-  - board: boardsource_blok
+  - board: boardsource_blok//zmk
     shield: osprette
-  - board: boardsource_blok
+  - board: boardsource_blok//zmk
     shield: clog_left
-  - board: boardsource_blok
+  - board: boardsource_blok//zmk
     shield: clog_right
-  - board: boardsource_blok
+  - board: boardsource_blok//zmk
     shield: the_paintbrush_left
-  - board: nice_nano_v2
+  - board: nice_nano//zmk
     shield: settings_reset
-  - board: seeeduino_xiao_ble
+  - board: xiao_ble//zmk
     shield: xiao_settings_reset
