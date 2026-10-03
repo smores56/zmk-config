@@ -8,8 +8,10 @@
 #define FN 3
 
 &mt {
-    flavor = "tap-preferred";
-    tapping_term_ms = <150>;
+    // `balanced` is ZMK's permissive-hold: a tapped+released chord key settles
+    // the hold within the term, so fast same-hand chords like Ctrl+T register.
+    flavor = "balanced";
+    tapping_term_ms = <200>;
 };
 
 / {
