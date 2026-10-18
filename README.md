@@ -15,4 +15,4 @@ borrowed shield for a board I didn't design.
 [zmk]: https://zmk.dev/
 [osprette]: https://github.com/smores56/osprette
 [clog]: https://github.com/smores56/clog
-[action]: https://github.com/zmkfirmware/zmk/.github/workflows/build-user-config.yml
+[action]: https://github.com/zmkfirmware/zmk/blob/main/.github/workflows/build-user-config.yml

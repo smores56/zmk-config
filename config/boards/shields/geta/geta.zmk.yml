@@ -2,7 +2,7 @@ file_format: "1"
 id: geta
 name: Geta
 type: shield
-url: https://github.com/smores56/geta
+url: https://github.com/smores56/clog/tree/main/v4
 requires: [seeed_xiao]
 features:
   - keys
